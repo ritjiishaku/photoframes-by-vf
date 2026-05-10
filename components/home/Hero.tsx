@@ -1,22 +1,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getSiteSettings } from '@/lib/sanity/queries';
-import { urlFor } from '@/lib/sanity/client';
+import { getSiteSettings } from '@/lib/sheets/queries';
+import { imageUrl } from '@/lib/sheets/utils';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 
 export async function Hero() {
   const settings = await getSiteSettings();
 
-  const headline = settings?.heroHeadline ?? 'Celebrate love with a frame that lasts forever.';
-  const subheadline = settings?.heroSubheadline ?? 'Premium custom acrylic frames and gold-layered jewellery \u2014 made for your moment.';
-  const ctaPrimary = settings?.heroCTAPrimary ?? 'Explore the Collection';
-  const ctaSecondary = settings?.heroCTASecondary ?? 'Chat on WhatsApp';
+  const headline = settings?.hero_headline ?? 'Celebrate love with a frame that lasts forever.';
+  const subheadline = settings?.hero_subheadline ?? 'Premium custom acrylic frames and gold-layered jewellery \u2014 made for your moment.';
+  const ctaPrimary = settings?.hero_cta_primary ?? 'Explore the Collection';
+  const ctaSecondary = settings?.hero_cta_secondary ?? 'Chat on WhatsApp';
 
   return (
     <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-surface-container-lowest via-background to-surface overflow-hidden">
-      {settings?.aboutImage && (
+      {settings?.about_image && (
         <Image
-          src={urlFor(settings.aboutImage)}
+          src={imageUrl(settings.about_image)}
           alt="Photoframes by VF \u2014 premium custom frames and jewellery"
           fill
           priority

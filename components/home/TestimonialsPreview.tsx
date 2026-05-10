@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { getLatestTestimonials } from '@/lib/sanity/queries';
+import { getLatestTestimonials } from '@/lib/sheets/queries';
 import { StarRating } from '@/components/ui/StarRating';
+import { VideoEmbed } from '@/components/ui/VideoEmbed';
 
 export async function TestimonialsPreview() {
   const testimonials = await getLatestTestimonials();
@@ -15,21 +16,30 @@ export async function TestimonialsPreview() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <blockquote
-              key={t._id}
-              className="bg-surface p-6 border border-outline-variant"
-            >
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-surface p-6 border border-outline-variant">
+              {t.review_type === 'video' || t.review_type === 'both' ? (
+                t.video_url ? (
+                  <div className="mb-4">
+                    <VideoEmbed url={t.video_url} title={`${t.customer_name}'s video review`} />
+                  </div>
+                ) : null
+              ) : null}
+
               <StarRating rating={t.rating} />
-              <p className="mt-3 font-accent text-lg italic text-on-surface leading-relaxed">
-                &ldquo;{t.reviewText}&rdquo;
-              </p>
+
+              {t.review_text && (
+                <p className="mt-3 font-accent text-lg italic text-on-surface leading-relaxed">
+                  &ldquo;{t.review_text}&rdquo;
+                </p>
+              )}
+
               <footer className="mt-4 font-body text-sm text-on-surface-variant">
-                <strong className="font-medium text-on-surface">{t.customerName}</strong>
+                <strong className="font-medium text-on-surface">{t.customer_name}</strong>
                 {t.location && <span> — {t.location}</span>}
-                {t.productType && <span> · {t.productType}</span>}
+                {t.product_type && <span> · {t.product_type}</span>}
               </footer>
-            </blockquote>
+            </div>
           ))}
         </div>
 

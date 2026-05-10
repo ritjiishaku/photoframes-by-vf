@@ -1,5 +1,5 @@
 import { ProductCard } from './ProductCard';
-import type { Product } from '@/lib/sanity/types';
+import type { Product } from '@/lib/sheets/types';
 
 interface ProductGridProps {
   products: Product[];
@@ -17,7 +17,7 @@ export function ProductGrid({ products }: ProductGridProps) {
   return (
     <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
       {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
+        <ProductCard key={product.slug} product={product} />
       ))}
     </div>
   );

@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import { PortableText } from '@portabletext/react';
-import { getSiteSettings } from '@/lib/sanity/queries';
-import { urlFor } from '@/lib/sanity/client';
+import { getSiteSettings } from '@/lib/sheets/queries';
+import { imageUrl } from '@/lib/sheets/utils';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: 'About | Photoframes by VF',
@@ -29,10 +28,10 @@ export default async function AboutPage() {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-        {settings?.aboutImage && (
+        {settings?.about_image && (
           <div className="relative aspect-[4/5] overflow-hidden bg-surface-variant">
             <Image
-              src={urlFor(settings.aboutImage)}
+              src={imageUrl(settings.about_image)}
               alt="Photoframes by VF — behind the craft"
               fill
               priority
@@ -42,10 +41,8 @@ export default async function AboutPage() {
           </div>
         )}
 
-        <div className="font-body text-on-surface-variant leading-relaxed">
-          {settings?.aboutText ? (
-            <PortableText value={settings.aboutText} />
-          ) : (
+        <div className="font-body text-on-surface-variant leading-relaxed whitespace-pre-line">
+          {settings?.about_text || (
             <>
               <p className="mb-4">
                 At Photoframes by VF, we believe every moment deserves to be

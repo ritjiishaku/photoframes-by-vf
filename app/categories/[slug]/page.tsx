@@ -1,13 +1,17 @@
-import { getCategoryBySlug, getCategorySlugs, getProductsByCategory } from '@/lib/sanity/queries';
+import { getCategoryBySlug, getCategorySlugs, getProductsByCategory } from '@/lib/sheets/queries';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-export const revalidate = 3600;
+export const revalidate = 1800;
 
 export async function generateStaticParams() {
-  const slugs = await getCategorySlugs();
-  return slugs.map((s) => ({ slug: s.slug }));
+  try {
+    const slugs = await getCategorySlugs();
+    return slugs.map((s) => ({ slug: s.slug }));
+  } catch {
+    return [];
+  }
 }
 
 interface PageProps {

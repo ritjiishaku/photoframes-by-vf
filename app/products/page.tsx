@@ -1,8 +1,8 @@
-import { getProducts, getCategories } from '@/lib/sanity/queries';
+import { getProducts, getCategories } from '@/lib/sheets/queries';
 import { ProductsPageClient } from '@/components/product/ProductsPageClient';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const revalidate = 900;
 
 export const metadata: Metadata = {
   title: 'Products | Photoframes by VF',

@@ -1,11 +1,11 @@
-import { getProductSlugs, getCategorySlugs } from '@/lib/sanity/queries';
+import { getProductSlugs, getCategorySlugs } from '@/lib/sheets/queries';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://photoframesbyvf.vercel.app';
 
 export default async function sitemap() {
   const [productSlugs, categorySlugs] = await Promise.all([
-    getProductSlugs(),
-    getCategorySlugs(),
+    getProductSlugs().catch(() => []),
+    getCategorySlugs().catch(() => []),
   ]);
 
   const staticPages = [

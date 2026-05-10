@@ -1,16 +1,20 @@
-import { getProductBySlug, getProductSlugs } from '@/lib/sanity/queries';
+import { getProductBySlug, getProductSlugs } from '@/lib/sheets/queries';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { ProductSchema } from '@/components/product/ProductSchema';
 import { ProductViewTracker } from '@/components/product/ProductViewTracker';
+import { imageUrl } from '@/lib/sheets/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { urlFor } from '@/lib/sanity/client';
 
-export const revalidate = 3600;
+export const revalidate = 900;
 
 export async function generateStaticParams() {
-  const slugs = await getProductSlugs();
-  return slugs.map((s) => ({ slug: s.slug }));
+  try {
+    const slugs = await getProductSlugs();
+    return slugs.map((s) => ({ slug: s.slug }));
+  } catch {
+    return [];
+  }
 }
 
 interface PageProps {
@@ -25,16 +29,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${product.name} | Photoframes by VF`,
     description:
       product.description?.slice(0, 160) ??
-      `Premium ${product.category?.name ?? 'custom frame'} — ${product.name}. Inquire on WhatsApp.`,
+      `Premium ${product.category || 'custom frame'} — ${product.name}. Inquire on WhatsApp.`,
     openGraph: {
       title: `${product.name} | Photoframes by VF`,
       description:
         product.description?.slice(0, 160) ??
-        `Premium ${product.category?.name ?? 'custom frame'} by Photoframes by VF.`,
+        `Premium ${product.category || 'custom frame'} by Photoframes by VF.`,
       type: 'website',
       locale: 'en_NG',
-      images: product.images?.[0]
-        ? [{ url: urlFor(product.images[0]), width: 1200, height: 1500 }]
+      images: product.image_url
+        ? [{ url: imageUrl(product.image_url), width: 1200, height: 1500 }]
         : [],
     },
   };
@@ -51,8 +55,8 @@ export default async function ProductPage({ params }: PageProps) {
     <>
       <ProductSchema product={product} />
       <ProductViewTracker
-        productSlug={product.slug.current}
-        categorySlug={product.category?.slug?.current}
+        productSlug={product.slug}
+        categorySlug={product.category}
       />
       <ProductDetail product={product} />
     </>

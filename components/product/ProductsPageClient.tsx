@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { CategoryFilter } from './CategoryFilter';
 import { ProductGrid } from './ProductGrid';
-import type { Product } from '@/lib/sanity/types';
-import type { Category } from '@/lib/sanity/types';
+import type { Product } from '@/lib/sheets/types';
+import type { Category } from '@/lib/sheets/types';
 
 interface ProductsPageClientProps {
   products: Product[];
@@ -18,7 +18,7 @@ export function ProductsPageClient({
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const filtered = activeCategory
-    ? products.filter((p) => p.category?.slug?.current === activeCategory)
+    ? products.filter((p) => p.category === activeCategory)
     : products;
 
   return (

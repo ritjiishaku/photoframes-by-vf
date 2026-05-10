@@ -1,7 +1,7 @@
 'use client';
 
 import { trackEvent } from '@/lib/analytics';
-import type { Category } from '@/lib/sanity/types';
+import type { Category } from '@/lib/sheets/types';
 
 interface CategoryFilterProps {
   categories: Category[];
@@ -46,13 +46,13 @@ export function CategoryFilter({
 
       {categories.map((category) => (
         <button
-          key={category._id}
+          key={category.slug}
           type="button"
           role="tab"
-          aria-selected={activeSlug === category.slug.current}
-          onClick={() => handleSelect(category.slug.current)}
+          aria-selected={activeSlug === category.slug}
+          onClick={() => handleSelect(category.slug)}
           className={`shrink-0 font-body text-sm font-medium px-4 py-2 transition-colors duration-200 ${
-            activeSlug === category.slug.current
+            activeSlug === category.slug
               ? 'bg-primary text-on-primary'
               : 'bg-surface-variant text-on-surface-variant hover:bg-outline-variant'
           }`}

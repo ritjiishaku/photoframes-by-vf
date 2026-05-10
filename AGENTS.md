@@ -18,7 +18,9 @@
 | Primary CTA      | WhatsApp inquiry via wa.me deep links only             |
 | Auth             | None — no user login, no accounts, no sessions         |
 | Payments         | None in v1.0 — Paystack integration planned for v2.0  |
-| Admin            | Fechi Godwin — non-technical, manages content via Sanity.io |
+| Admin            | Fechi Godwin — non-technical, manages content via Google Sheets |
+| CMS              | Google Sheets (free, no login required beyond Google account) |
+| Sheet            | URL stored in GOOGLE_SHEET_ID env var |
 | PRD reference    | PRD v2.0 — 18 sections. All decisions trace back to it.|
 
 ---
@@ -30,21 +32,24 @@ This stack is final. Do not suggest alternatives. Do not deviate.
 ### Frontend
 - **Framework:** Next.js 14 (App Router)
 - **Styling:** Tailwind CSS
-- **CMS Client:** Sanity.io (content fetched at build time + ISR where needed)
+- **CMS Client:** Google Sheets (content fetched via googleapis at build time + time-based ISR)
 
 ### Backend
 - **Runtime:** Node.js
 - **Framework:** Express.js
-- **Purpose:** API routes for WhatsApp link generation, analytics event logging, and admin webhooks from Sanity
+- **Purpose:** API routes for analytics event logging only (/api/analytics POST — unchanged)
 
 ### Database
 - **Engine:** PostgreSQL
 - **Purpose:** Analytics events, testimonial approvals, admin change log, WhatsApp inquiry logs
 
 ### CMS
-- **Platform:** Sanity.io
-- **Who uses it:** Fechi Godwin (non-technical admin)
-- **What it manages:** Products, categories, hero content, testimonials, about section, contact info, SEO fields
+- **Platform:** Google Sheets
+- **Who uses it:** Fechi Godwin (non-technical admin) — edits rows directly
+- **What it manages:** Products (tab 1), Categories (tab 2), Testimonials (tab 3),
+                   Site Settings (tab 4 — key/value pairs)
+- **Library:** googleapis (official Google Node.js client)
+- **Access:** Google Service Account — read-only access to the sheet
 
 ### Hosting & Infrastructure
 - **Hosting:** Vercel (frontend + Next.js API routes)
@@ -63,19 +68,19 @@ Every service must have a viable $0/month free tier that covers the expected tra
 The agent must enforce these without exception. They are non-negotiable.
 
 ### NEVER do any of the following:
-- ❌ Hardcode the WhatsApp number anywhere in source files — it must always be read from the Sanity CMS `contact_info` document
+- ❌ Hardcode the WhatsApp number — it must always be read from NEXT_PUBLIC_WHATSAPP_NUMBER env var, which is synced from the Site Settings tab of the Google Sheet at build time
 - ❌ Use WordPress, Wix, Webflow, Squarespace, or any page-builder tool
-- ❌ Build a complex admin dashboard — Sanity Studio is the entire admin experience
+- ❌ Build a custom admin interface — Google Sheets IS the admin experience
 - ❌ Add user authentication, login pages, sessions, or JWT at any point in v1.0
 - ❌ Integrate any payment gateway (Stripe, Paystack, Flutterwave) in v1.0
 - ❌ Use Arial, Inter, Roboto, or any generic system font — the brand requires editorial serif + refined sans-serif typography only
 - ❌ Use purple gradients, generic template layouts, or stock-looking design patterns
-- ❌ Scatter display text directly in JSX/markup — all user-facing strings must come from Sanity or a single constants layer to allow future localisation
-- ❌ Hardcode prices as display strings — price must always be stored as a number in PostgreSQL/Sanity and formatted as ₦XX,XXX by a shared utility function
+- ❌ Scatter display text directly in JSX/markup — all user-facing strings must come from Google Sheets queries (lib/sheets/queries.ts) or lib/constants.ts — never hardcoded in JSX
+- ❌ Hardcode prices as display strings — price must always be stored as a number in Google Sheets/PostgreSQL and formatted as ₦XX,XXX by a shared utility function
 - ❌ Add any feature not in the PRD v1.0 scope without explicit approval
 
 ### ALWAYS do the following:
-- ✅ Read the WhatsApp number from `NEXT_PUBLIC_WHATSAPP_NUMBER` env var (synced from Sanity) — never from code
+- ✅ Read the WhatsApp number from `NEXT_PUBLIC_WHATSAPP_NUMBER` env var (synced from Google Sheets Site Settings tab at build time) — never from code
 - ✅ Format all prices using the shared `formatNaira(amount: number): string` utility — e.g. `formatNaira(25000)` → `"₦25,000"`
 - ✅ Format all dates as DD/MM/YYYY using the shared `formatDate(date: Date): string` utility
 - ✅ Validate all Nigerian phone numbers against the pattern `+234XXXXXXXXXX` before saving
@@ -136,10 +141,12 @@ photoframes-vf/
 │       └── PriceTag.tsx          # Always uses formatNaira()
 │
 ├── lib/
-│   ├── sanity/
-│   │   ├── client.ts             # Sanity client config
-│   │   ├── queries.ts            # All GROQ queries — no inline queries in components
-│   │   └── types.ts              # TypeScript types generated from Sanity schema
+│   ├── sheets/
+│   │   ├── client.ts        # Google Sheets API client (googleapis)
+│   │   ├── queries.ts       # All data-fetching — no raw sheet access in components
+│   │   ├── types.ts         # TypeScript types matching sheet column structure
+│   │   ├── sync-env.ts      # Syncs whatsapp_number to env var at build time
+│   │   └── utils.ts         # imageUrl helper for direct Google Drive URLs
 │   ├── db/
 │   │   ├── client.ts             # PostgreSQL connection
 │   │   └── queries.ts            # All SQL queries — no inline SQL in routes
@@ -147,34 +154,32 @@ photoframes-vf/
 │   ├── format.ts                 # formatNaira(), formatDate(), formatPhone()
 │   └── analytics.ts              # trackEvent() — wraps POST to /api/analytics
 │
-├── sanity/
-│   ├── schema/
-│   │   ├── product.ts            # Matches PRD Section 7.1
-│   │   ├── category.ts           # Matches PRD Section 7.2
-│   │   ├── testimonial.ts        # Matches PRD Section 7.5
-│   │   ├── adminContent.ts       # Matches PRD Section 7.4
-│   │   └── index.ts
-│   └── sanity.config.ts
-│
+
 ├── styles/
 │   └── globals.css               # Tailwind base + design token CSS variables
 │
 ├── public/
-│   └── fallback-product.jpg      # Branded placeholder for broken product images
+│   ├── fallback-product.svg      # Branded placeholder for broken product images
+│   └── favicon.svg               # Brand favicon
 │
+├── scripts/
+│   └── seed.mjs                  # Seed script for sample products
 ├── .env.local                    # Local environment variables (never committed)
 ├── .env.example                  # Committed — documents all required env vars
 ├── AGENTS.md                     # This file
-└── PRD.md                        # PRD v2.0 — the source of truth for all decisions
+├── Implementation-Plan.md        # Phased build plan
+├── Photoframes_by_VF_PRD_v2.md   # PRD v2.0 — the source of truth for all decisions
+└── sanity-to-googlesheets-migration.md  # CMS migration reference
 ```
 
 ---
 
 ## 5. DATA SCHEMAS
 
-Directly from PRD v2.0 Section 7. The agent must implement Sanity schemas and PostgreSQL tables that exactly match these.
+Directly from PRD v2.0 Section 7. Content is managed via Google Sheets tabs.
+PostgreSQL tables match the analytics requirements below.
 
-### 5.1 Sanity — Product Schema (`sanity/schema/product.ts`)
+### 5.1 Product Schema
 
 ```typescript
 // Fields map exactly to PRD Section 7.1
@@ -199,7 +204,7 @@ Directly from PRD v2.0 Section 7. The agent must implement Sanity schemas and Po
 }
 ```
 
-### 5.2 Sanity — Category Schema (`sanity/schema/category.ts`)
+### 5.2 Sanity — Category Schema
 
 ```typescript
 // Maps to PRD Section 7.2
@@ -216,7 +221,7 @@ Directly from PRD v2.0 Section 7. The agent must implement Sanity schemas and Po
 }
 ```
 
-### 5.3 Sanity — Testimonial Schema (`sanity/schema/testimonial.ts`)
+### 5.3 Sanity — Testimonial Schema
 
 ```typescript
 // Maps to PRD Section 7.5
@@ -234,7 +239,7 @@ Directly from PRD v2.0 Section 7. The agent must implement Sanity schemas and Po
 }
 ```
 
-### 5.4 Sanity — Admin Content / Site Settings (`sanity/schema/adminContent.ts`)
+### 5.4 Sanity — Admin Content / Site Settings
 
 ```typescript
 // Maps to PRD Section 7.4 — single singleton document

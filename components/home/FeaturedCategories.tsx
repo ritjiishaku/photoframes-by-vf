@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { getCategories } from '@/lib/sanity/queries';
-import { urlFor } from '@/lib/sanity/client';
+import { getCategories } from '@/lib/sheets/queries';
+import { imageUrl } from '@/lib/sheets/utils';
 
 export async function FeaturedCategories() {
   const categories = await getCategories();
@@ -18,13 +18,13 @@ export async function FeaturedCategories() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
           {categories.map((category) => (
             <Link
-              key={category._id}
-              href={`/categories/${category.slug.current}`}
+              key={category.slug}
+              href={`/categories/${category.slug}`}
               className="group relative aspect-[4/5] overflow-hidden bg-surface-variant"
             >
-              {category.coverImage && (
+              {category.cover_image_url && (
                 <Image
-                  src={urlFor(category.coverImage)}
+                  src={imageUrl(category.cover_image_url)}
                   alt={`${category.name} — Photoframes by VF`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
