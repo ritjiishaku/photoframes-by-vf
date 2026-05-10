@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#FEF6E0"/>
+  <text x="200" y="220" font-family="Georgia, serif" font-size="20" fill="#B8952E" text-anchor="middle" font-weight="bold">Photoframes</text>
+  <text x="200" y="240" font-family="Georgia, serif" font-size="14" fill="#B8952E" text-anchor="middle">by VF</text>
+  <rect x="140" y="270" width="120" height="1" fill="#D4AF37" rx="0.5"/>
+  <text x="200" y="295" font-family="Arial, sans-serif" font-size="11" fill="#8B7355" text-anchor="middle">Premium Gifts</text>
+</svg>

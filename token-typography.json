@@ -1,0 +1,435 @@
+{
+    "$schema": "https://raw.githubusercontent.com/tailwindlabs/tailwindcss/master/packages/tailwindcss/schema/config.schema.json",
+    "description": "Typography Design Tokens for Photoframes by VF — PRD v2.0 Section 9.1",
+    "version": "1.0.0",
+    "lastUpdated": "2025-05-09",
+    "fontFamilies": {
+        "heading": {
+            "name": "Cormorant Garamond",
+            "type": "serif",
+            "description": "Refined serif display font — conveys heritage, elegance, weight",
+            "fallback": [
+                "Georgia",
+                "Times New Roman",
+                "serif"
+            ],
+            "variable": "--font-heading",
+            "nextJsImport": "Cormorant_Garamond",
+            "weights": [
+                400,
+                500,
+                600,
+                700
+            ],
+            "subsets": [
+                "latin",
+                "latin-ext"
+            ]
+        },
+        "body": {
+            "name": "DM Sans",
+            "type": "sans-serif",
+            "description": "Clean, modern sans-serif — readable, contemporary, airy",
+            "fallback": [
+                "Helvetica Neue",
+                "Segoe UI",
+                "sans-serif"
+            ],
+            "variable": "--font-body",
+            "nextJsImport": "DM_Sans",
+            "weights": [
+                400,
+                500,
+                700
+            ],
+            "subsets": [
+                "latin",
+                "latin-ext"
+            ]
+        },
+        "accent": {
+            "name": "Playfair Display",
+            "type": "serif",
+            "description": "High-contrast serif for emotional moments and testimonials",
+            "fallback": [
+                "Georgia",
+                "Times New Roman",
+                "serif"
+            ],
+            "variable": "--font-accent",
+            "nextJsImport": "Playfair_Display",
+            "weights": [
+                400,
+                500,
+                600,
+                700,
+                800
+            ],
+            "subsets": [
+                "latin",
+                "latin-ext"
+            ],
+            "useCase": "testimonials, quotes, emotional headlines"
+        }
+    },
+    "fontSizes": {
+        "mobile": {
+            "xs": {
+                "size": "12px",
+                "lineHeight": "16px",
+                "letterSpacing": "0.025em"
+            },
+            "sm": {
+                "size": "14px",
+                "lineHeight": "20px",
+                "letterSpacing": "0.01em"
+            },
+            "base": {
+                "size": "16px",
+                "lineHeight": "24px",
+                "letterSpacing": "0"
+            },
+            "lg": {
+                "size": "18px",
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em"
+            },
+            "xl": {
+                "size": "20px",
+                "lineHeight": "28px",
+                "letterSpacing": "-0.015em"
+            },
+            "2xl": {
+                "size": "24px",
+                "lineHeight": "32px",
+                "letterSpacing": "-0.02em"
+            },
+            "3xl": {
+                "size": "28px",
+                "lineHeight": "36px",
+                "letterSpacing": "-0.025em"
+            },
+            "4xl": {
+                "size": "32px",
+                "lineHeight": "40px",
+                "letterSpacing": "-0.025em"
+            },
+            "5xl": {
+                "size": "36px",
+                "lineHeight": "44px",
+                "letterSpacing": "-0.03em"
+            }
+        },
+        "desktop": {
+            "xs": {
+                "size": "14px",
+                "lineHeight": "20px",
+                "letterSpacing": "0.025em"
+            },
+            "sm": {
+                "size": "16px",
+                "lineHeight": "24px",
+                "letterSpacing": "0.01em"
+            },
+            "base": {
+                "size": "18px",
+                "lineHeight": "28px",
+                "letterSpacing": "0"
+            },
+            "lg": {
+                "size": "20px",
+                "lineHeight": "30px",
+                "letterSpacing": "-0.01em"
+            },
+            "xl": {
+                "size": "24px",
+                "lineHeight": "32px",
+                "letterSpacing": "-0.015em"
+            },
+            "2xl": {
+                "size": "30px",
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em"
+            },
+            "3xl": {
+                "size": "36px",
+                "lineHeight": "44px",
+                "letterSpacing": "-0.025em"
+            },
+            "4xl": {
+                "size": "44px",
+                "lineHeight": "52px",
+                "letterSpacing": "-0.025em"
+            },
+            "5xl": {
+                "size": "56px",
+                "lineHeight": "64px",
+                "letterSpacing": "-0.03em"
+            }
+        }
+    },
+    "fontWeights": {
+        "thin": 100,
+        "extralight": 200,
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700,
+        "extrabold": 800,
+        "black": 900
+    },
+    "lineHeights": {
+        "none": 1,
+        "tight": 1.25,
+        "snug": 1.375,
+        "normal": 1.5,
+        "relaxed": 1.625,
+        "loose": 2
+    },
+    "letterSpacing": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
+    },
+    "textStyles": {
+        "hero": {
+            "description": "Main hero headline — homepage",
+            "font": "heading",
+            "size": {
+                "mobile": "5xl",
+                "desktop": "5xl"
+            },
+            "weight": "medium",
+            "lineHeight": "tight",
+            "letterSpacing": "tight",
+            "transform": "none"
+        },
+        "heroSubheadline": {
+            "description": "Hero subheadline — homepage",
+            "font": "body",
+            "size": {
+                "mobile": "lg",
+                "desktop": "xl"
+            },
+            "weight": "normal",
+            "lineHeight": "relaxed",
+            "letterSpacing": "normal",
+            "color": "text-muted"
+        },
+        "sectionTitle": {
+            "description": "Section title (Featured Products, Testimonials, etc.)",
+            "font": "heading",
+            "size": {
+                "mobile": "3xl",
+                "desktop": "4xl"
+            },
+            "weight": "medium",
+            "lineHeight": "tight",
+            "letterSpacing": "tight"
+        },
+        "productTitle": {
+            "description": "Product card title",
+            "font": "heading",
+            "size": {
+                "mobile": "lg",
+                "desktop": "xl"
+            },
+            "weight": "semibold",
+            "lineHeight": "snug",
+            "letterSpacing": "normal"
+        },
+        "productPrice": {
+            "description": "Product price display",
+            "font": "body",
+            "size": {
+                "mobile": "base",
+                "desktop": "lg"
+            },
+            "weight": "medium",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "color": "accent"
+        },
+        "productDescription": {
+            "description": "Product description text",
+            "font": "body",
+            "size": {
+                "mobile": "sm",
+                "desktop": "base"
+            },
+            "weight": "normal",
+            "lineHeight": "relaxed",
+            "letterSpacing": "normal",
+            "color": "text-muted"
+        },
+        "testimonialText": {
+            "description": "Testimonial quote",
+            "font": "accent",
+            "size": {
+                "mobile": "lg",
+                "desktop": "xl"
+            },
+            "weight": "normal",
+            "lineHeight": "relaxed",
+            "letterSpacing": "normal",
+            "transform": "italic"
+        },
+        "testimonialAuthor": {
+            "description": "Testimonial author name",
+            "font": "body",
+            "size": {
+                "mobile": "sm",
+                "desktop": "base"
+            },
+            "weight": "medium",
+            "lineHeight": "normal",
+            "letterSpacing": "normal"
+        },
+        "buttonLabel": {
+            "description": "Button text",
+            "font": "body",
+            "size": {
+                "mobile": "sm",
+                "desktop": "base"
+            },
+            "weight": "medium",
+            "lineHeight": "none",
+            "letterSpacing": "wide",
+            "transform": "uppercase"
+        },
+        "navLink": {
+            "description": "Navigation menu links",
+            "font": "body",
+            "size": {
+                "mobile": "base",
+                "desktop": "base"
+            },
+            "weight": "medium",
+            "lineHeight": "none",
+            "letterSpacing": "normal"
+        },
+        "footerText": {
+            "description": "Footer text (copyright, contact)",
+            "font": "body",
+            "size": {
+                "mobile": "xs",
+                "desktop": "sm"
+            },
+            "weight": "normal",
+            "lineHeight": "relaxed",
+            "letterSpacing": "normal",
+            "color": "text-muted"
+        },
+        "categoryTag": {
+            "description": "Category filter tabs",
+            "font": "body",
+            "size": {
+                "mobile": "sm",
+                "desktop": "base"
+            },
+            "weight": "medium",
+            "lineHeight": "none",
+            "letterSpacing": "normal",
+            "transform": "uppercase"
+        },
+        "customisationNote": {
+            "description": "Product customisation note",
+            "font": "body",
+            "size": {
+                "mobile": "xs",
+                "desktop": "sm"
+            },
+            "weight": "normal",
+            "lineHeight": "relaxed",
+            "letterSpacing": "normal",
+            "color": "accent",
+            "transform": "italic"
+        }
+    },
+    "accessibility": {
+        "minimumFontSize": "14px",
+        "minimumContrastRatio": 4.5,
+        "minimumTouchTarget": "44px"
+    },
+    "responsiveBreakpoints": {
+        "mobile": {
+            "min": 375,
+            "max": 767,
+            "baseFontSize": "14px"
+        },
+        "tablet": {
+            "min": 768,
+            "max": 1023,
+            "baseFontSize": "15px"
+        },
+        "desktop": {
+            "min": 1024,
+            "max": null,
+            "baseFontSize": "16px"
+        }
+    },
+    "performance": {
+        "fontLoadingStrategy": "next/font",
+        "displaySwap": true,
+        "preload": true,
+        "totalFontWeight": 80,
+        "unit": "KB"
+    },
+    "tailwindMapping": {
+        "fontFamily": {
+            "heading": "var(--font-heading)",
+            "body": "var(--font-body)",
+            "accent": "var(--font-accent)"
+        },
+        "fontSize": {
+            "xs": [
+                "12px",
+                "16px"
+            ],
+            "sm": [
+                "14px",
+                "20px"
+            ],
+            "base": [
+                "16px",
+                "24px"
+            ],
+            "lg": [
+                "18px",
+                "28px"
+            ],
+            "xl": [
+                "20px",
+                "28px"
+            ],
+            "2xl": [
+                "24px",
+                "32px"
+            ],
+            "3xl": [
+                "28px",
+                "36px"
+            ],
+            "4xl": [
+                "32px",
+                "40px"
+            ],
+            "5xl": [
+                "36px",
+                "44px"
+            ],
+            "6xl": [
+                "44px",
+                "52px"
+            ],
+            "7xl": [
+                "56px",
+                "64px"
+            ]
+        }
+    }
+}

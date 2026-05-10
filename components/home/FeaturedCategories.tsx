@@ -1,0 +1,46 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import { getCategories } from '@/lib/sanity/queries';
+import { urlFor } from '@/lib/sanity/client';
+
+export async function FeaturedCategories() {
+  const categories = await getCategories();
+
+  if (!categories.length) return null;
+
+  return (
+    <section className="py-16 md:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-heading text-3xl md:text-4xl font-medium text-on-background tracking-tight mb-10">
+          Explore the Collection
+        </h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {categories.map((category) => (
+            <Link
+              key={category._id}
+              href={`/categories/${category.slug.current}`}
+              className="group relative aspect-[4/5] overflow-hidden bg-surface-variant"
+            >
+              {category.coverImage && (
+                <Image
+                  src={urlFor(category.coverImage)}
+                  alt={`${category.name} — Photoframes by VF`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="font-heading text-lg font-semibold text-inverse-on-surface">
+                  {category.name}
+                </h3>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

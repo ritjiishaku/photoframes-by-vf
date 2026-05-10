@@ -1,0 +1,337 @@
+/* ==========================================
+   Design Tokens — Photoframes by VF
+   Auto-generated from token-colour.json &
+   token-typography.json
+   Do not edit directly.
+   ========================================== */
+
+/* ===== Colour Roles (Light) ===== */
+:root {
+  --color-primary: hsl(45, 100%, 51%);
+  --color-on-primary: hsl(0, 0%, 100%);
+  --color-primary-container: hsl(45, 100%, 49%);
+  --color-on-primary-container: hsl(44, 100%, 18%);
+  --color-secondary: hsl(44, 100%, 24%);
+  --color-on-secondary: hsl(0, 0%, 100%);
+  --color-secondary-container: hsl(43, 95%, 55%);
+  --color-on-secondary-container: hsl(44, 100%, 18%);
+  --color-tertiary: hsl(44, 100%, 24%);
+  --color-on-tertiary: hsl(0, 0%, 100%);
+  --color-tertiary-container: hsl(42, 88%, 61%);
+  --color-on-tertiary-container: hsl(44, 100%, 18%);
+  --color-error: hsl(0, 74%, 42%);
+  --color-on-error: hsl(0, 0%, 100%);
+  --color-error-container: hsl(0, 100%, 84%);
+  --color-on-error-container: hsl(0, 100%, 29%);
+  --color-background: hsl(44, 100%, 96%);
+  --color-on-background: hsl(53, 40%, 8%);
+  --color-surface: hsl(44, 100%, 96%);
+  --color-on-surface: hsl(53, 40%, 8%);
+  --color-surface-variant: hsl(46, 77%, 81%);
+  --color-on-surface-variant: hsl(47, 49%, 22%);
+  --color-outline: hsl(46, 30%, 40%);
+  --color-outline-variant: hsl(46, 47%, 70%);
+  --color-inverse-surface: hsl(53, 21%, 16%);
+  --color-inverse-on-surface: hsl(46, 69%, 91%);
+  --color-inverse-primary: hsl(45, 100%, 49%);
+  --color-surface-dim: hsl(48, 32%, 82%);
+  --color-surface-bright: hsl(44, 100%, 96%);
+  --color-surface-container-lowest: hsl(0, 0%, 100%);
+  --color-surface-container-low: hsl(48, 75%, 92%);
+  --color-surface-container: hsl(46, 61%, 90%);
+  --color-surface-container-high: hsl(46, 48%, 88%);
+  --color-surface-container-highest: hsl(46, 41%, 85%);
+}
+
+/* ===== Colour Roles (Dark) ===== */
+.dark {
+  --color-primary: hsl(45, 100%, 51%);
+  --color-on-primary: hsl(44, 100%, 12%);
+  --color-primary-container: hsl(44, 100%, 18%);
+  --color-on-primary-container: hsl(40, 100%, 81%);
+  --color-secondary: hsl(43, 95%, 55%);
+  --color-on-secondary: hsl(42, 100%, 13%);
+  --color-secondary-container: hsl(44, 100%, 18%);
+  --color-on-secondary-container: hsl(40, 100%, 81%);
+  --color-tertiary: hsl(42, 88%, 61%);
+  --color-on-tertiary: hsl(43, 100%, 13%);
+  --color-tertiary-container: hsl(44, 100%, 18%);
+  --color-on-tertiary-container: hsl(40, 100%, 81%);
+  --color-error: hsl(0, 100%, 84%);
+  --color-on-error: hsl(0, 100%, 21%);
+  --color-error-container: hsl(0, 100%, 29%);
+  --color-on-error-container: hsl(0, 100%, 92%);
+  --color-background: hsl(53, 24%, 4.8%);
+  --color-on-background: hsl(46, 41%, 85%);
+  --color-surface: hsl(53, 24%, 4.8%);
+  --color-on-surface: hsl(46, 41%, 85%);
+  --color-surface-variant: hsl(47, 49%, 22%);
+  --color-on-surface-variant: hsl(46, 47%, 70%);
+  --color-outline: hsl(46, 26%, 50%);
+  --color-outline-variant: hsl(47, 49%, 22%);
+  --color-inverse-surface: hsl(46, 41%, 85%);
+  --color-inverse-on-surface: hsl(53, 21%, 16%);
+  --color-inverse-primary: hsl(45, 100%, 24%);
+  --color-surface-dim: hsl(53, 24%, 4.8%);
+  --color-surface-bright: hsl(52.2, 19%, 19.6%);
+  --color-surface-container-lowest: hsl(53, 16%, 3.2%);
+  --color-surface-container-low: hsl(53, 40%, 8%);
+  --color-surface-container: hsl(53, 36.2%, 9.6%);
+  --color-surface-container-high: hsl(53, 26.7%, 13.6%);
+  --color-surface-container-highest: hsl(52.6, 20%, 17.8%);
+}
+
+/* ===== Font Families ===== */
+:root {
+  --font-heading: 'Cormorant Garamond', Georgia, Times New Roman, serif;
+  --font-body: 'DM Sans', Helvetica Neue, Segoe UI, sans-serif;
+  --font-accent: 'Playfair Display', Georgia, Times New Roman, serif;
+}
+
+/* ===== Font Weights ===== */
+:root {
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+
+/* ===== Line Heights ===== */
+:root {
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+}
+
+/* ===== Letter Spacing ===== */
+:root {
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* ===== Font Sizes — Mobile (default) ===== */
+:root {
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-xs--letter-spacing: 0.025em;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-sm--letter-spacing: 0.01em;
+  --text-base: 16px;
+  --text-base--line-height: 24px;
+  --text-base--letter-spacing: 0;
+  --text-lg: 18px;
+  --text-lg--line-height: 28px;
+  --text-lg--letter-spacing: -0.01em;
+  --text-xl: 20px;
+  --text-xl--line-height: 28px;
+  --text-xl--letter-spacing: -0.015em;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 32px;
+  --text-2xl--letter-spacing: -0.02em;
+  --text-3xl: 28px;
+  --text-3xl--line-height: 36px;
+  --text-3xl--letter-spacing: -0.025em;
+  --text-4xl: 32px;
+  --text-4xl--line-height: 40px;
+  --text-4xl--letter-spacing: -0.025em;
+  --text-5xl: 36px;
+  --text-5xl--line-height: 44px;
+  --text-5xl--letter-spacing: -0.03em;
+}
+
+/* ===== Font Sizes — Desktop (≥1024px) ===== */
+@media (min-width: 1024px) {
+  :root {
+  --text-xs: 14px;
+  --text-xs--line-height: 20px;
+  --text-xs--letter-spacing: 0.025em;
+  --text-sm: 16px;
+  --text-sm--line-height: 24px;
+  --text-sm--letter-spacing: 0.01em;
+  --text-base: 18px;
+  --text-base--line-height: 28px;
+  --text-base--letter-spacing: 0;
+  --text-lg: 20px;
+  --text-lg--line-height: 30px;
+  --text-lg--letter-spacing: -0.01em;
+  --text-xl: 24px;
+  --text-xl--line-height: 32px;
+  --text-xl--letter-spacing: -0.015em;
+  --text-2xl: 30px;
+  --text-2xl--line-height: 38px;
+  --text-2xl--letter-spacing: -0.02em;
+  --text-3xl: 36px;
+  --text-3xl--line-height: 44px;
+  --text-3xl--letter-spacing: -0.025em;
+  --text-4xl: 44px;
+  --text-4xl--line-height: 52px;
+  --text-4xl--letter-spacing: -0.025em;
+  --text-5xl: 56px;
+  --text-5xl--line-height: 64px;
+  --text-5xl--letter-spacing: -0.03em;
+  }
+}
+
+/* ===== Text Style Composites ===== */
+:root {
+  --text-hero--font-family: var(--font-heading);
+  --text-hero--font-size: var(--text-5xl);
+  --text-hero--line-height: 1.25;
+  --text-hero--font-weight: 500;
+  --text-hero--letter-spacing: -0.025em;
+  --text-hero--text-transform: none;
+  --text-hero-desktop--font-family: var(--font-heading);
+  --text-hero-desktop--font-size: var(--text-5xl);
+  --text-hero-desktop--line-height: 1.25;
+  --text-hero-desktop--font-weight: 500;
+  --text-hero-desktop--letter-spacing: -0.025em;
+  --text-hero-desktop--text-transform: none;
+  --text-hero-subheadline--font-family: var(--font-body);
+  --text-hero-subheadline--font-size: var(--text-lg);
+  --text-hero-subheadline--line-height: 1.625;
+  --text-hero-subheadline--font-weight: 400;
+  --text-hero-subheadline--letter-spacing: 0;
+  --text-hero-subheadline-desktop--font-family: var(--font-body);
+  --text-hero-subheadline-desktop--font-size: var(--text-xl);
+  --text-hero-subheadline-desktop--line-height: 1.625;
+  --text-hero-subheadline-desktop--font-weight: 400;
+  --text-hero-subheadline-desktop--letter-spacing: 0;
+  --text-section-title--font-family: var(--font-heading);
+  --text-section-title--font-size: var(--text-3xl);
+  --text-section-title--line-height: 1.25;
+  --text-section-title--font-weight: 500;
+  --text-section-title--letter-spacing: -0.025em;
+  --text-section-title-desktop--font-family: var(--font-heading);
+  --text-section-title-desktop--font-size: var(--text-4xl);
+  --text-section-title-desktop--line-height: 1.25;
+  --text-section-title-desktop--font-weight: 500;
+  --text-section-title-desktop--letter-spacing: -0.025em;
+  --text-product-title--font-family: var(--font-heading);
+  --text-product-title--font-size: var(--text-lg);
+  --text-product-title--line-height: 1.375;
+  --text-product-title--font-weight: 600;
+  --text-product-title--letter-spacing: 0;
+  --text-product-title-desktop--font-family: var(--font-heading);
+  --text-product-title-desktop--font-size: var(--text-xl);
+  --text-product-title-desktop--line-height: 1.375;
+  --text-product-title-desktop--font-weight: 600;
+  --text-product-title-desktop--letter-spacing: 0;
+  --text-product-price--font-family: var(--font-body);
+  --text-product-price--font-size: var(--text-base);
+  --text-product-price--line-height: 1.5;
+  --text-product-price--font-weight: 500;
+  --text-product-price--letter-spacing: 0;
+  --text-product-price-desktop--font-family: var(--font-body);
+  --text-product-price-desktop--font-size: var(--text-lg);
+  --text-product-price-desktop--line-height: 1.5;
+  --text-product-price-desktop--font-weight: 500;
+  --text-product-price-desktop--letter-spacing: 0;
+  --text-product-description--font-family: var(--font-body);
+  --text-product-description--font-size: var(--text-sm);
+  --text-product-description--line-height: 1.625;
+  --text-product-description--font-weight: 400;
+  --text-product-description--letter-spacing: 0;
+  --text-product-description-desktop--font-family: var(--font-body);
+  --text-product-description-desktop--font-size: var(--text-base);
+  --text-product-description-desktop--line-height: 1.625;
+  --text-product-description-desktop--font-weight: 400;
+  --text-product-description-desktop--letter-spacing: 0;
+  --text-testimonial-text--font-family: var(--font-accent);
+  --text-testimonial-text--font-size: var(--text-lg);
+  --text-testimonial-text--line-height: 1.625;
+  --text-testimonial-text--font-weight: 400;
+  --text-testimonial-text--letter-spacing: 0;
+  --text-testimonial-text--font-style: italic;
+  --text-testimonial-text-desktop--font-family: var(--font-accent);
+  --text-testimonial-text-desktop--font-size: var(--text-xl);
+  --text-testimonial-text-desktop--line-height: 1.625;
+  --text-testimonial-text-desktop--font-weight: 400;
+  --text-testimonial-text-desktop--letter-spacing: 0;
+  --text-testimonial-text-desktop--font-style: italic;
+  --text-testimonial-author--font-family: var(--font-body);
+  --text-testimonial-author--font-size: var(--text-sm);
+  --text-testimonial-author--line-height: 1.5;
+  --text-testimonial-author--font-weight: 500;
+  --text-testimonial-author--letter-spacing: 0;
+  --text-testimonial-author-desktop--font-family: var(--font-body);
+  --text-testimonial-author-desktop--font-size: var(--text-base);
+  --text-testimonial-author-desktop--line-height: 1.5;
+  --text-testimonial-author-desktop--font-weight: 500;
+  --text-testimonial-author-desktop--letter-spacing: 0;
+  --text-button-label--font-family: var(--font-body);
+  --text-button-label--font-size: var(--text-sm);
+  --text-button-label--line-height: 1;
+  --text-button-label--font-weight: 500;
+  --text-button-label--letter-spacing: 0.025em;
+  --text-button-label--text-transform: uppercase;
+  --text-button-label-desktop--font-family: var(--font-body);
+  --text-button-label-desktop--font-size: var(--text-base);
+  --text-button-label-desktop--line-height: 1;
+  --text-button-label-desktop--font-weight: 500;
+  --text-button-label-desktop--letter-spacing: 0.025em;
+  --text-button-label-desktop--text-transform: uppercase;
+  --text-nav-link--font-family: var(--font-body);
+  --text-nav-link--font-size: var(--text-base);
+  --text-nav-link--line-height: 1;
+  --text-nav-link--font-weight: 500;
+  --text-nav-link--letter-spacing: 0;
+  --text-nav-link-desktop--font-family: var(--font-body);
+  --text-nav-link-desktop--font-size: var(--text-base);
+  --text-nav-link-desktop--line-height: 1;
+  --text-nav-link-desktop--font-weight: 500;
+  --text-nav-link-desktop--letter-spacing: 0;
+  --text-footer-text--font-family: var(--font-body);
+  --text-footer-text--font-size: var(--text-xs);
+  --text-footer-text--line-height: 1.625;
+  --text-footer-text--font-weight: 400;
+  --text-footer-text--letter-spacing: 0;
+  --text-footer-text-desktop--font-family: var(--font-body);
+  --text-footer-text-desktop--font-size: var(--text-sm);
+  --text-footer-text-desktop--line-height: 1.625;
+  --text-footer-text-desktop--font-weight: 400;
+  --text-footer-text-desktop--letter-spacing: 0;
+  --text-category-tag--font-family: var(--font-body);
+  --text-category-tag--font-size: var(--text-sm);
+  --text-category-tag--line-height: 1;
+  --text-category-tag--font-weight: 500;
+  --text-category-tag--letter-spacing: 0;
+  --text-category-tag--text-transform: uppercase;
+  --text-category-tag-desktop--font-family: var(--font-body);
+  --text-category-tag-desktop--font-size: var(--text-base);
+  --text-category-tag-desktop--line-height: 1;
+  --text-category-tag-desktop--font-weight: 500;
+  --text-category-tag-desktop--letter-spacing: 0;
+  --text-category-tag-desktop--text-transform: uppercase;
+  --text-customisation-note--font-family: var(--font-body);
+  --text-customisation-note--font-size: var(--text-xs);
+  --text-customisation-note--line-height: 1.625;
+  --text-customisation-note--font-weight: 400;
+  --text-customisation-note--letter-spacing: 0;
+  --text-customisation-note--font-style: italic;
+  --text-customisation-note-desktop--font-family: var(--font-body);
+  --text-customisation-note-desktop--font-size: var(--text-sm);
+  --text-customisation-note-desktop--line-height: 1.625;
+  --text-customisation-note-desktop--font-weight: 400;
+  --text-customisation-note-desktop--letter-spacing: 0;
+  --text-customisation-note-desktop--font-style: italic;
+}
+
+/* ===== Accessibility ===== */
+:root {
+  --min-font-size: 14px;
+  --min-contrast-ratio: 4.5;
+  --min-touch-target: 44px;
+}
