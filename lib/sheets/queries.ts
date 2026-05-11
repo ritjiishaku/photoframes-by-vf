@@ -2,8 +2,12 @@ import { getSheetRows } from './client';
 import type { Product, Category, Testimonial, SiteSettings, ReviewType } from './types';
 
 export async function getProducts(): Promise<Product[]> {
-  const rows = await getSheetRows('Products');
-  return rows.map(rowToProduct).filter(p => p.is_visible);
+  try {
+    const rows = await getSheetRows('Products');
+    return rows.map(rowToProduct).filter(p => p.is_visible);
+  } catch {
+    return [];
+  }
 }
 
 export async function getProductBySlug(slug: string): Promise<Product | null> {
@@ -17,11 +21,15 @@ export async function getProductSlugs(): Promise<{ slug: string }[]> {
 }
 
 export async function getCategories(): Promise<Category[]> {
-  const rows = await getSheetRows('Categories');
-  return rows
-    .map(rowToCategory)
-    .filter(c => c.is_active)
-    .sort((a, b) => a.display_order - b.display_order);
+  try {
+    const rows = await getSheetRows('Categories');
+    return rows
+      .map(rowToCategory)
+      .filter(c => c.is_active)
+      .sort((a, b) => a.display_order - b.display_order);
+  } catch {
+    return [];
+  }
 }
 
 export async function getCategoryBySlug(slug: string): Promise<Category | null> {
@@ -40,8 +48,12 @@ export async function getProductsByCategory(categorySlug: string): Promise<Produ
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  const rows = await getSheetRows('Testimonials');
-  return rows.map(rowToTestimonial).filter(t => t.is_visible);
+  try {
+    const rows = await getSheetRows('Testimonials');
+    return rows.map(rowToTestimonial).filter(t => t.is_visible);
+  } catch {
+    return [];
+  }
 }
 
 export async function getLatestTestimonials(): Promise<Testimonial[]> {
@@ -52,6 +64,8 @@ export async function getLatestTestimonials(): Promise<Testimonial[]> {
 export async function getSiteSettings(): Promise<SiteSettings | null> {
   try {
     const rows = await getSheetRows('Site Settings');
+    if (!rows.length) return null;
+
     const map = Object.fromEntries(rows.map(([key, value]) => [key, value]));
 
     return {
