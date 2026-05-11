@@ -26,12 +26,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return {};
 
   return {
-    title: `${product.name} | Photoframes by VF`,
+      title: product.name,
     description:
       product.description?.slice(0, 160) ??
       `Premium ${product.category || 'custom frame'} — ${product.name}. Inquire on WhatsApp.`,
     openGraph: {
-      title: `${product.name} | Photoframes by VF`,
+      title: product.name,
       description:
         product.description?.slice(0, 160) ??
         `Premium ${product.category || 'custom frame'} by Photoframes by VF.`,

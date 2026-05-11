@@ -6,11 +6,11 @@ import type { Metadata } from 'next';
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'About | Photoframes by VF',
+    title: 'About',
   description:
     'Discover the story behind Photoframes by VF — a Nigerian brand crafting premium custom acrylic frames, gold-layered jewellery, and personalised gifts for life\'s most cherished moments.',
   openGraph: {
-    title: 'About | Photoframes by VF',
+  title: 'About',
     description:
       'Discover the story behind Photoframes by VF — premium custom frames and gifts crafted in Nigeria.',
     type: 'website',

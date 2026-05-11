@@ -5,7 +5,8 @@ export async function getProducts(): Promise<Product[]> {
   try {
     const rows = await getSheetRows('Products');
     return rows.map(rowToProduct).filter(p => p.is_visible);
-  } catch {
+  } catch (err) {
+    console.error('[getProducts] Failed:', err);
     return [];
   }
 }
@@ -27,7 +28,8 @@ export async function getCategories(): Promise<Category[]> {
       .map(rowToCategory)
       .filter(c => c.is_active)
       .sort((a, b) => a.display_order - b.display_order);
-  } catch {
+  } catch (err) {
+    console.error('[getCategories] Failed:', err);
     return [];
   }
 }
@@ -51,7 +53,8 @@ export async function getTestimonials(): Promise<Testimonial[]> {
   try {
     const rows = await getSheetRows('Testimonials');
     return rows.map(rowToTestimonial).filter(t => t.is_visible);
-  } catch {
+  } catch (err) {
+    console.error('[getTestimonials] Failed:', err);
     return [];
   }
 }
@@ -64,7 +67,10 @@ export async function getLatestTestimonials(): Promise<Testimonial[]> {
 export async function getSiteSettings(): Promise<SiteSettings | null> {
   try {
     const rows = await getSheetRows('Site Settings');
-    if (!rows.length) return null;
+    if (!rows.length) {
+      console.error('[getSiteSettings] No rows found');
+      return null;
+    }
 
     const map = Object.fromEntries(rows.map(([key, value]) => [key, value]));
 
@@ -78,7 +84,8 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
       whatsapp_number: map['whatsapp_number'] ?? '',
       instagram_handle: map['instagram_handle'] ?? '',
     };
-  } catch {
+  } catch (err) {
+    console.error('[getSiteSettings] Failed:', err);
     return null;
   }
 }
