@@ -3,7 +3,7 @@ import { getSiteSettings } from '@/lib/sheets/queries';
 import { imageUrl } from '@/lib/sheets/utils';
 import type { Metadata } from 'next';
 
-export const revalidate = 86400;
+export const revalidate = 1800;
 
 export const metadata: Metadata = {
     title: 'About',
