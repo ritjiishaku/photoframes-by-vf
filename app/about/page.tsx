@@ -42,29 +42,31 @@ export default async function AboutPage() {
         )}
 
         <div className="font-body text-on-surface-variant leading-relaxed whitespace-pre-line">
-          {settings?.about_text || (
-            <>
-              <p className="mb-4">
-                At Photoframes by VF, we believe every moment deserves to be
-                preserved beautifully. What started as a passion for capturing
-                memories has grown into a brand dedicated to crafting premium
-                custom acrylic frames, gold-layered jewellery, and personalised
-                gifts.
-              </p>
-              <p className="mb-4">
-                Founded by Fechi Godwin, our mission is to help you celebrate
-                life&apos;s milestones — from weddings and anniversaries to
-                graduations and corporate achievements — with pieces that are as
-                unique as your story.
-              </p>
-              <p>
-                Every product is thoughtfully designed, handcrafted with care,
-                and finished with the quality that love deserves. We serve
-                customers across Nigeria, bringing a touch of elegance to every
-                home and occasion.
-              </p>
-            </>
-          )}
+          {settings?.about_text?.trim()
+            ? settings.about_text
+            : (
+              <>
+                <p className="mb-4">
+                  At Photoframes by VF, we believe every moment deserves to be
+                  preserved beautifully. What started as a passion for capturing
+                  memories has grown into a brand dedicated to crafting premium
+                  custom acrylic frames, gold-layered jewellery, and personalised
+                  gifts.
+                </p>
+                <p className="mb-4">
+                  Founded by Fechi Godwin, our mission is to help you celebrate
+                  life&apos;s milestones — from weddings and anniversaries to
+                  graduations and corporate achievements — with pieces that are as
+                  unique as your story.
+                </p>
+                <p>
+                  Every product is thoughtfully designed, handcrafted with care,
+                  and finished with the quality that love deserves. We serve
+                  customers across Nigeria, bringing a touch of elegance to every
+                  home and occasion.
+                </p>
+              </>
+            )}
         </div>
       </div>
     </div>

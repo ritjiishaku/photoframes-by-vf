@@ -72,7 +72,9 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
       return null;
     }
 
-    const map = Object.fromEntries(rows.map(([key, value]) => [key, value]));
+    const map = Object.fromEntries(
+      rows.map(([key, value]) => [key.trim(), value?.trim() ?? '']),
+    );
 
     return {
       hero_headline: map['hero_headline'] ?? '',

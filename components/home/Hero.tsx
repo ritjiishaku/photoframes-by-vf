@@ -20,7 +20,7 @@ export async function Hero() {
           alt="Photoframes by VF \u2014 premium custom frames and jewellery"
           fill
           priority
-          className="object-cover opacity-20 brightness-150"
+          className="object-cover opacity-15"
           sizes="100vw"
         />
       )}
