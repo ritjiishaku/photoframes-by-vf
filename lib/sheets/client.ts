@@ -1,12 +1,26 @@
 import { google } from 'googleapis';
+import { JWT } from 'google-auth-library';
 
-const auth = new google.auth.GoogleAuth({
-  credentials: {
-    client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-  },
-  scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-});
+function getKey(): string {
+  const raw = process.env.GOOGLE_PRIVATE_KEY ?? '';
+  if (!raw) return '';
+  // Handle both formats: actual newlines and escaped \n
+  if (raw.includes('-----BEGIN')) return raw.replace(/\\n/g, '\n');
+  // If somehow neither, return as-is
+  return raw;
+}
+
+function getAuth(): JWT | null {
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const key = getKey();
+  if (!email || !key) return null;
+
+  return new JWT({
+    email,
+    key,
+    scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+  });
+}
 
 export async function getSheetRows(
   sheetName: string,
@@ -18,21 +32,11 @@ export async function getSheetRows(
     return [];
   }
 
-  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-  const privateKey = process.env.GOOGLE_PRIVATE_KEY;
-
-  if (!clientEmail || !privateKey) {
+  const auth = getAuth();
+  if (!auth) {
     console.error('[getSheetRows] GOOGLE_SERVICE_ACCOUNT_EMAIL or GOOGLE_PRIVATE_KEY is not set');
     return [];
   }
-
-  const auth = new google.auth.GoogleAuth({
-    credentials: {
-      client_email: clientEmail,
-      private_key: privateKey.replace(/\\n/g, '\n'),
-    },
-    scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-  });
 
   const sheets = google.sheets({ version: 'v4', auth });
 
