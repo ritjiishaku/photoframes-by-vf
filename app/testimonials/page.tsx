@@ -45,8 +45,6 @@ function TestimonialCard({ t }: { t: Awaited<ReturnType<typeof getTestimonials>>
         </p>
       )}
 
-      {t.review_type === 'text' && !t.review_text ? null : null}
-
       <footer className="mt-4 font-body text-sm text-on-surface-variant">
         <strong className="font-medium text-on-surface">
           {t.customer_name}
