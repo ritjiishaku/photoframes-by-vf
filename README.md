@@ -54,7 +54,50 @@ DATABASE_URL=                  # Optional — postgres://user:pass@host:5432/dbn
 
 ### Google Sheet Structure
 
-The sheet needs tabs named: `Products`, `Categories`, `Testimonials`, `Site_Settings`. Each tab's first row is the header.
+The CMS relies on a single Google Sheet with the following 4 tabs. The first row of each tab must contain the header names exactly as listed:
+
+#### 1. `Products`
+- `name`: Product title
+- `slug`: URL-friendly identifier
+- `category`: Matches a category slug
+- `emotional_headline`: Short, evocative hook
+- `description`: Detailed product story
+- `price`: Numeric value
+- `availability`: `in_stock`, `made_to_order`, or `unavailable`
+- `occasion_tags`: Comma-separated (e.g., Wedding, Anniversary)
+- `is_customisable`: `TRUE` or `FALSE`
+- `customisation_note`: Optional instructions
+- `image_url`: Direct image link or Google Drive ID
+- `is_visible`: `TRUE` or `FALSE`
+
+#### 2. `Categories`
+- `name`: Category title
+- `slug`: URL-friendly identifier
+- `description`: Collection narrative
+- `cover_image_url`: Link to cover image
+- `display_order`: Numeric sorting value
+- `is_active`: `TRUE` or `FALSE`
+
+#### 3. `Testimonials`
+- `customer_name`: Name to display
+- `location`: Optional (e.g., Lagos, Nigeria)
+- `product_type`: Optional product mention
+- `review_text`: The testimonial content
+- `rating`: 1 to 5
+- `review_type`: `text`, `video`, or `both`
+- `video_url`: Link to video review
+- `is_visible`: `TRUE` or `FALSE`
+- `date`: Optional date string
+
+#### 4. `Site_Settings`
+- `hero_headline`: Main landing page title
+- `hero_subheadline`: Brand mission statement
+- `hero_cta_primary`: Text for "Shop" button
+- `hero_cta_secondary`: Text for "Inquire" button
+- `about_text`: Founder's story
+- `about_image`: Link to brand/founder photo
+- `whatsapp_number`: International format (e.g., +234...)
+- `instagram_handle`: Just the handle (e.g., photoframesbyvf)
 
 ### Install & Run
 
