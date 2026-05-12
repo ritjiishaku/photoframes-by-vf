@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import { getSiteSettings } from '@/lib/sheets/queries';
+import { imageUrl } from '@/lib/sheets/utils';
+import type { Metadata } from 'next';
 import { FadeIn } from '@/components/ui/FadeIn';
 
 export const metadata: Metadata = {
