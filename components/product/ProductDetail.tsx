@@ -108,7 +108,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
               </div>
             )}
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 hidden md:flex flex-col sm:flex-row gap-4">
               <WhatsAppButton
                 type="product_specific"
                 label="Inquire on WhatsApp"
