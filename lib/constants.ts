@@ -7,6 +7,18 @@ export const NAV_LINKS = [
 
 // ── Footer ────────────────────────────────────────
 export const FOOTER_COPYRIGHT = `© ${new Date().getFullYear()} Photoframes by VF. All rights reserved.`;
+export const FOOTER_COLLECTIONS = [
+  { label: 'Acrylic Frames', href: '/categories/acrylic-frames' },
+  { label: 'Gold Jewellery', href: '/categories/jewellery' },
+  { label: 'Memorial Frames', href: '/categories/memorial-frames' },
+  { label: 'Custom Gifts', href: '/categories/custom-gifts' },
+] as const;
+
+export const TRUST_SIGNALS = [
+  { label: 'Handcrafted Excellence', description: 'Artisan quality in every piece' },
+  { label: 'Nationwide Delivery', description: 'Safe shipping across Nigeria' },
+  { label: 'Secure Payments', description: 'Protected shopping experience' },
+] as const;
 
 // ── Accessibility ──────────────────────────────────
 export const ARIA_WHATSAPP_FLOAT = 'Chat with us on WhatsApp';

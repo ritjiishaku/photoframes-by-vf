@@ -1,5 +1,6 @@
 import { getCategoryBySlug, getCategorySlugs, getProductsByCategory } from '@/lib/sheets/queries';
 import { ProductGrid } from '@/components/product/ProductGrid';
+import { FadeIn } from '@/components/ui/FadeIn';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -50,17 +51,19 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <h1 className="font-heading text-3xl md:text-4xl font-medium text-on-surface tracking-tight">
-        {category.name}
-      </h1>
+      <FadeIn>
+        <h1 className="font-heading text-3xl md:text-4xl font-medium text-on-surface tracking-tight">
+          {category.name}
+        </h1>
 
-      {category.description && (
-        <p className="mt-2 font-body text-on-surface-variant max-w-2xl">
-          {category.description}
-        </p>
-      )}
+        {category.description && (
+          <p className="mt-4 font-body text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+            {category.description}
+          </p>
+        )}
+      </FadeIn>
 
-      <div className="mt-8">
+      <div className="mt-12">
         <ProductGrid products={products} />
       </div>
     </div>
