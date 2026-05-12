@@ -159,22 +159,21 @@ export function ProductDetail({ product, relatedProducts = [] }: ProductDetailPr
                 </p>
               )}
 
-              <div className="flex items-center gap-4 mt-4">
-                <PriceTag amount={product.price} className="text-xl md:text-2xl" />
+              <PriceTag amount={product.price} className="mt-4 text-xl md:text-2xl" />
+              <div className="flex flex-nowrap items-center gap-2 mt-2">
                 <span
-                  className={`font-body text-xs font-medium px-3 py-1 ${
+                  className={`font-body text-xs font-medium px-3 py-1 whitespace-nowrap ${
                     availabilityColors[product.availability] ?? ''
                   }`}
                 >
                   {availabilityLabels[product.availability] ?? product.availability}
                 </span>
+                {product.is_customisable && (
+                  <span className="font-body text-xs font-medium px-3 py-1 whitespace-nowrap bg-surface-variant text-on-surface-variant">
+                    Customisable
+                  </span>
+                )}
               </div>
-
-              {product.is_customisable && (
-                <span className="inline-block font-body text-xs font-medium px-3 py-1 bg-surface-variant text-on-surface-variant mt-2">
-                  Customisable
-                </span>
-              )}
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
