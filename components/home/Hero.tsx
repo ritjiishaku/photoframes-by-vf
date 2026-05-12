@@ -31,7 +31,7 @@ export async function Hero() {
         />
       )}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
         <div className="max-w-2xl">
           <FadeIn delay={0.1}>
             <span className="inline-block font-body text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-6">

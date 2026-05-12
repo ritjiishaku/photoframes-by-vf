@@ -2,10 +2,12 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NAV_LINKS, ARIA_MOBILE_MENU_OPEN, ARIA_MOBILE_MENU_CLOSE } from '@/lib/constants';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
   const close = useCallback(() => setIsOpen(false), []);
@@ -69,16 +71,21 @@ export function Navigation() {
             aria-label="Navigation menu"
           >
             <nav className="flex flex-col gap-2">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={close}
-                  className="font-body text-lg font-medium text-on-surface-variant hover:text-primary transition-colors py-3 border-b border-outline-variant/50 last:border-none"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={close}
+                    className={`font-body text-lg font-medium transition-colors py-3 border-b border-outline-variant/50 last:border-none ${
+                      isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
         </div>
