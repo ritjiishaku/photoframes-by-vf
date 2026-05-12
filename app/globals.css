@@ -35,4 +35,25 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Premium Utilities */
+  .btn-gold {
+    @apply bg-primary text-on-primary shadow-md transition-all duration-300;
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+  }
+
+  .btn-gold:hover {
+    @apply shadow-lg scale-[1.02];
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
 }

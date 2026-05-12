@@ -9,6 +9,7 @@ interface WhatsAppButtonProps {
   productName?: string;
   productCategory?: string;
   className?: string;
+  variant?: 'primary' | 'outline';
 }
 
 export function WhatsAppButton({
@@ -17,6 +18,7 @@ export function WhatsAppButton({
   productName,
   productCategory,
   className = '',
+  variant = 'outline',
 }: WhatsAppButtonProps) {
   const handleClick = () => {
     trackEvent({
@@ -28,11 +30,16 @@ export function WhatsAppButton({
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const variantClasses = 
+    variant === 'primary' 
+      ? 'btn-gold' 
+      : 'border-2 border-primary text-primary hover:bg-primary hover:text-on-primary';
+
   return (
     <button
       type="button"
       onClick={handleClick}
-      className={`inline-block font-body font-medium px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors duration-200 ${className}`}
+      className={`inline-block font-body font-medium px-6 py-3 transition-colors duration-200 ${variantClasses} ${className}`}
     >
       {label}
     </button>

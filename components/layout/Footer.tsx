@@ -14,8 +14,9 @@ export function Footer() {
               Photoframes by VF
             </Link>
             <p className="mt-3 font-body text-sm text-inverse-on-surface opacity-80 leading-relaxed max-w-xs">
-              Premium custom acrylic photo frames and non-tarnish gold-layered jewellery.
-              Crafted for love, milestones, and moments worth keeping.
+              Bespoke acrylic frames and non-tarnish gold-layered jewellery,
+              meticulously crafted to honor your most significant milestones and
+              preserve the beauty of your story.
             </p>
           </div>
 

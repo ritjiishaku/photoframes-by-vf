@@ -3,6 +3,7 @@
 import { ImageWithFallback } from '@/components/ui/ImageWithFallback';
 import { PriceTag } from '@/components/ui/PriceTag';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { ShareButton } from '@/components/ui/ShareButton';
 import { imageUrl } from '@/lib/sheets/utils';
 import type { Product } from '@/lib/sheets/types';
 
@@ -106,13 +107,18 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </div>
           )}
 
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <WhatsAppButton
               type="product_specific"
               label="Inquire on WhatsApp"
               productName={product.name}
               productCategory={product.category}
-              className="w-full text-center"
+              className="flex-1 text-center"
+              variant="primary"
+            />
+            <ShareButton
+              title={product.name}
+              text={product.emotional_headline || undefined}
             />
           </div>
         </div>

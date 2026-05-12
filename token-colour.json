@@ -112,15 +112,15 @@
         "role": {
             "light": {
                 "primary": "{color.key.primary}",
-                "onPrimary": "{color.palette.primary.100}",
+                "onPrimary": "{color.palette.primary.10}",
                 "primaryContainer": "{color.palette.primary.80}",
                 "onPrimaryContainer": "{color.palette.primary.30}",
                 "secondary": "{color.palette.secondary.40}",
-                "onSecondary": "{color.palette.secondary.100}",
+                "onSecondary": "{color.palette.secondary.10}",
                 "secondaryContainer": "{color.palette.secondary.80}",
                 "onSecondaryContainer": "{color.palette.secondary.30}",
                 "tertiary": "{color.palette.tertiary.40}",
-                "onTertiary": "{color.palette.tertiary.100}",
+                "onTertiary": "{color.palette.tertiary.10}",
                 "tertiaryContainer": "{color.palette.tertiary.80}",
                 "onTertiaryContainer": "{color.palette.tertiary.30}",
                 "error": "{color.palette.error.40}",

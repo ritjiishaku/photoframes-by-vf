@@ -47,23 +47,25 @@ export default async function AboutPage() {
             : (
               <>
                 <p className="mb-4">
-                  At Photoframes by VF, we believe every moment deserves to be
-                  preserved beautifully. What started as a passion for capturing
-                  memories has grown into a brand dedicated to crafting premium
-                  custom acrylic frames, gold-layered jewellery, and personalised
-                  gifts.
+                  At Photoframes by VF, we believe every moment is a milestone that
+                  deserves to be preserved with elegance. What began as a personal
+                  passion for capturing life&apos;s beauty has evolved into a
+                  premier destination for bespoke acrylic frames and exquisite
+                  gold-layered jewellery.
                 </p>
                 <p className="mb-4">
                   Founded by Fechi Godwin, our mission is to help you celebrate
-                  life&apos;s milestones — from weddings and anniversaries to
-                  graduations and corporate achievements — with pieces that are as
-                  unique as your story.
+                  the milestones that define your story — from weddings and
+                  anniversaries to graduations and professional triumphs. We
+                  believe in craftsmanship that speaks of love, excellence, and
+                  endurance.
                 </p>
                 <p>
-                  Every product is thoughtfully designed, handcrafted with care,
-                  and finished with the quality that love deserves. We serve
-                  customers across Nigeria, bringing a touch of elegance to every
-                  home and occasion.
+                  Each piece is thoughtfully designed and handcrafted with
+                  uncompromising care, ensuring that your memories are framed in
+                  quality that lasts a lifetime. Based in Nigeria, we are proud
+                  to bring a touch of timeless sophistication to your home and
+                  life.
                 </p>
               </>
             )}

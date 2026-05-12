@@ -7,18 +7,18 @@
 
 /* ===== Colour Roles (Light) ===== */
 :root {
-  --color-primary: hsl(45, 100%, 51%);
-  --color-on-primary: hsl(0, 0%, 100%);
-  --color-primary-container: hsl(45, 100%, 49%);
-  --color-on-primary-container: hsl(44, 100%, 18%);
-  --color-secondary: hsl(44, 100%, 24%);
-  --color-on-secondary: hsl(0, 0%, 100%);
-  --color-secondary-container: hsl(43, 95%, 55%);
-  --color-on-secondary-container: hsl(44, 100%, 18%);
-  --color-tertiary: hsl(44, 100%, 24%);
-  --color-on-tertiary: hsl(0, 0%, 100%);
-  --color-tertiary-container: hsl(42, 88%, 61%);
-  --color-on-tertiary-container: hsl(44, 100%, 18%);
+  --color-primary: hsl(41, 100%, 51%);
+  --color-on-primary: hsl(36, 100%, 8%);
+  --color-primary-container: hsl(38, 100%, 63%);
+  --color-on-primary-container: hsl(40, 100%, 19%);
+  --color-secondary: hsl(35, 100%, 27%);
+  --color-on-secondary: hsl(30, 100%, 9%);
+  --color-secondary-container: hsl(30, 100%, 72%);
+  --color-on-secondary-container: hsl(34, 100%, 21%);
+  --color-tertiary: hsl(16, 100%, 35%);
+  --color-on-tertiary: hsl(9, 100%, 12%);
+  --color-tertiary-container: hsl(13, 100%, 81%);
+  --color-on-tertiary-container: hsl(15, 100%, 26%);
   --color-error: hsl(0, 74%, 42%);
   --color-on-error: hsl(0, 0%, 100%);
   --color-error-container: hsl(0, 100%, 84%);
@@ -33,7 +33,7 @@
   --color-outline-variant: hsl(46, 47%, 70%);
   --color-inverse-surface: hsl(53, 21%, 16%);
   --color-inverse-on-surface: hsl(46, 69%, 91%);
-  --color-inverse-primary: hsl(45, 100%, 49%);
+  --color-inverse-primary: hsl(38, 100%, 63%);
   --color-surface-dim: hsl(48, 32%, 82%);
   --color-surface-bright: hsl(44, 100%, 96%);
   --color-surface-container-lowest: hsl(0, 0%, 100%);
@@ -45,25 +45,25 @@
 
 /* ===== Colour Roles (Dark) ===== */
 .dark {
-  --color-primary: hsl(45, 100%, 51%);
-  --color-on-primary: hsl(44, 100%, 12%);
-  --color-primary-container: hsl(44, 100%, 18%);
-  --color-on-primary-container: hsl(40, 100%, 81%);
-  --color-secondary: hsl(43, 95%, 55%);
-  --color-on-secondary: hsl(42, 100%, 13%);
-  --color-secondary-container: hsl(44, 100%, 18%);
-  --color-on-secondary-container: hsl(40, 100%, 81%);
-  --color-tertiary: hsl(42, 88%, 61%);
-  --color-on-tertiary: hsl(43, 100%, 13%);
-  --color-tertiary-container: hsl(44, 100%, 18%);
-  --color-on-tertiary-container: hsl(40, 100%, 81%);
+  --color-primary: hsl(41, 100%, 51%);
+  --color-on-primary: hsl(39, 100%, 13%);
+  --color-primary-container: hsl(40, 100%, 19%);
+  --color-on-primary-container: hsl(35, 100%, 84%);
+  --color-secondary: hsl(30, 100%, 72%);
+  --color-on-secondary: hsl(32, 100%, 15%);
+  --color-secondary-container: hsl(34, 100%, 21%);
+  --color-on-secondary-container: hsl(28, 100%, 87%);
+  --color-tertiary: hsl(13, 100%, 81%);
+  --color-on-tertiary: hsl(13, 100%, 19%);
+  --color-tertiary-container: hsl(15, 100%, 26%);
+  --color-on-tertiary-container: hsl(13, 100%, 91%);
   --color-error: hsl(0, 100%, 84%);
   --color-on-error: hsl(0, 100%, 21%);
   --color-error-container: hsl(0, 100%, 29%);
   --color-on-error-container: hsl(0, 100%, 92%);
-  --color-background: hsl(53, 24%, 4.8%);
+  --color-background: hsl(31.8, 24%, 4.8%);
   --color-on-background: hsl(46, 41%, 85%);
-  --color-surface: hsl(53, 24%, 4.8%);
+  --color-surface: hsl(31.8, 24%, 4.8%);
   --color-on-surface: hsl(46, 41%, 85%);
   --color-surface-variant: hsl(47, 49%, 22%);
   --color-on-surface-variant: hsl(46, 47%, 70%);
@@ -71,10 +71,10 @@
   --color-outline-variant: hsl(47, 49%, 22%);
   --color-inverse-surface: hsl(46, 41%, 85%);
   --color-inverse-on-surface: hsl(53, 21%, 16%);
-  --color-inverse-primary: hsl(45, 100%, 24%);
-  --color-surface-dim: hsl(53, 24%, 4.8%);
+  --color-inverse-primary: hsl(40, 100%, 25%);
+  --color-surface-dim: hsl(31.8, 24%, 4.8%);
   --color-surface-bright: hsl(52.2, 19%, 19.6%);
-  --color-surface-container-lowest: hsl(53, 16%, 3.2%);
+  --color-surface-container-lowest: hsl(21.2, 16%, 3.2%);
   --color-surface-container-low: hsl(53, 40%, 8%);
   --color-surface-container: hsl(53, 36.2%, 9.6%);
   --color-surface-container-high: hsl(53, 26.7%, 13.6%);

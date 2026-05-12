@@ -12,7 +12,8 @@ export default function NotFound() {
         404
       </h1>
       <p className="font-body text-lg text-on-surface-variant max-w-md mb-8">
-        The page you&apos;re looking for doesn&apos;t exist or has been moved.
+        We couldn&apos;t find the memory you were looking for. The page may have
+        moved or no longer exists.
       </p>
       <Link
         href="/"
