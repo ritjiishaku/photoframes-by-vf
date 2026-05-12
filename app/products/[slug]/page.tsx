@@ -1,4 +1,4 @@
-import { getProductBySlug, getProductSlugs } from '@/lib/sheets/queries';
+import { getProductBySlug, getProductSlugs, getProductsByCategory } from '@/lib/sheets/queries';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { ProductSchema } from '@/components/product/ProductSchema';
 import { ProductViewTracker } from '@/components/product/ProductViewTracker';
@@ -51,6 +51,12 @@ export default async function ProductPage({ params }: PageProps) {
     notFound();
   }
 
+  const related = product.category
+    ? (await getProductsByCategory(product.category))
+        .filter((p) => p.slug !== product.slug)
+        .slice(0, 4)
+    : [];
+
   return (
     <>
       <ProductSchema product={product} />
@@ -58,7 +64,7 @@ export default async function ProductPage({ params }: PageProps) {
         productSlug={product.slug}
         categorySlug={product.category}
       />
-      <ProductDetail product={product} />
+      <ProductDetail product={product} relatedProducts={related} />
     </>
   );
 }
