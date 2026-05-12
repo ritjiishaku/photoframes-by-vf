@@ -10,16 +10,27 @@ Premium custom acrylic photo frames and non-tarnish gold-layered jewellery e-com
 - **Styling:** Tailwind CSS + design tokens
 - **Fonts:** Cormorant Garamond (headings), Playfair Display (accent), DM Sans (body)
 - **Image serving:** Google Drive (via thumbnail API)
+- **Animation:** Custom IntersectionObserver-based FadeIn system
+
+## Design System
+
+The project uses a semantic token-based design system:
+- **Tokens:** Managed via `token-colour.json` and generated into `styles/tokens.css` via `npm run generate-tokens`.
+- **Accessibility:** Specifically tuned for WCAG AA compliance with high-contrast foreground roles on metallic background tokens.
+- **Tone:** A curated "Founders' Premium" palette featuring Espresso, Gold Lustre, and Muted Ivory.
 
 ## Features
 
 - Product catalogue with categories (Custom Frames / Gold Jewellery)
-- Google Sheets CMS — manage products, categories, testimonials, hero, and site settings
-- WhatsApp-based ordering flow with click-to-chat
-- Testimonials with text and video support + filter tabs
-- SEO: sitemap, robots.txt, Open Graph, JSON-LD product schema
-- Analytics tracking (product views, WhatsApp clicks, scroll depth, etc.)
-- Security headers (HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy)
+- **CMS:** Google Sheets — manage products, categories, testimonials, hero, and site settings
+- **WhatsApp-based ordering:** Direct product-specific inquiries with context tracking
+- **Motion Design:** High-performance, scroll-triggered animations via `IntersectionObserver`
+- **Accessibility:** WCAG AA contrast compliance (Deep Espresso on Gold) and reduced motion support
+- **Premium UX:** Founders-led brand voice, sticky mobile CTAs, and sophisticated design tokens
+- **Social Integration:** Web Share API integration for effortless product sharing
+- **SEO:** sitemap, robots.txt, Open Graph, JSON-LD product schema
+- **Analytics tracking:** Granular event tracking for user journey analysis
+- **Security:** HSTS, Content Security Policy, and robust header headers
 
 ## Getting Started
 
