@@ -23,7 +23,7 @@ export async function FeaturedCategories() {
             <FadeIn key={category.slug} delay={i * 0.1} direction="up">
               <Link
                 href={`/categories/${category.slug}`}
-                className="group relative aspect-[4/5] overflow-hidden bg-surface-variant"
+                className="group relative block aspect-[4/5] overflow-hidden bg-surface-variant"
               >
                 {category.cover_image_url && (
                   <Image
