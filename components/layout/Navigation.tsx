@@ -72,7 +72,7 @@ export function Navigation() {
           >
             <nav className="flex flex-col gap-2">
               {NAV_LINKS.map((link) => {
-                const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+                const isActive = pathname === link.href || (link.href.length > 1 && pathname.startsWith(link.href));
                 return (
                   <Link
                     key={link.href}

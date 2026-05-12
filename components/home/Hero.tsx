@@ -33,8 +33,8 @@ export async function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
         <div className="max-w-2xl">
-          <FadeIn delay={0.1}>
-            <span className="inline-block font-body text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-6">
+          <FadeIn delay={0.1} className="mb-6">
+            <span className="inline-block font-body text-xs font-semibold text-primary uppercase tracking-[0.2em]">
               Premium Gifts, Crafted with Love
             </span>
           </FadeIn>
@@ -45,14 +45,14 @@ export async function Hero() {
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.3}>
-            <p className="mt-5 font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
+          <FadeIn delay={0.3} className="mt-5">
+            <p className="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
               {subheadline}
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.4} direction="up">
-            <div className="mt-10 flex flex-wrap gap-4">
+          <FadeIn delay={0.4} direction="up" className="mt-10">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/products"
                 className="btn-gold font-body font-medium px-8 py-3"

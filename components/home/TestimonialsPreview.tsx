@@ -12,8 +12,8 @@ export async function TestimonialsPreview() {
   return (
     <section className="py-16 md:py-20 bg-surface-variant">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <h2 className="font-heading text-3xl md:text-4xl font-medium text-on-surface tracking-tight mb-10">
+        <FadeIn className="mb-10">
+          <h2 className="font-heading text-3xl md:text-4xl font-medium text-on-surface tracking-tight">
             Kind Words from Our Community
           </h2>
         </FadeIn>
@@ -48,8 +48,8 @@ export async function TestimonialsPreview() {
           ))}
         </div>
 
-        <FadeIn delay={0.4}>
-          <div className="mt-10 text-center">
+        <FadeIn delay={0.4} className="mt-10">
+          <div className="text-center">
             <Link
               href="/testimonials"
               className="font-body font-medium text-sm text-primary hover:text-primary-container transition-colors uppercase tracking-wide"
