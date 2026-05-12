@@ -125,25 +125,6 @@ export function ProductDetail({ product }: ProductDetailProps) {
           </div>
         </div>
       </div>
-
-      {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-t border-outline-variant p-4 md:hidden flex gap-3 shadow-[0_-4px_12px_rgba(0,0,0,0.05)]">
-        <WhatsAppButton
-          type="product_specific"
-          label="Inquire Now"
-          productName={product.name}
-          productCategory={product.category}
-          className="flex-1 text-center py-4"
-          variant="primary"
-        />
-        <ShareButton
-          title={product.name}
-          text={`Check out ${product.name} from Photoframes by VF!`}
-          className="bg-surface-variant text-on-surface-variant p-4 flex items-center justify-center aspect-square"
-        />
-      </div>
-      {/* Spacer for sticky bar */}
-      <div className="h-20 md:hidden" />
     </>
   );
 }
