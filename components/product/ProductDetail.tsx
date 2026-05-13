@@ -126,7 +126,7 @@ export function ProductDetail({ product, relatedProducts = [] }: ProductDetailPr
               {product.image_url && (
                 <ImageWithFallback
                   src={imageUrl(product.image_url)}
-                  alt={`${product.name} — ${product.category || 'Photoframes by VF'}`}
+                  alt={`${product.name} — ${product.category || 'Giftshop by VF'}`}
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"

@@ -108,7 +108,7 @@ const lines = [];
 function L(str = '') { lines.push(str); }
 
 L('/* ==========================================');
-L('   Design Tokens — Photoframes by VF');
+L('   Design Tokens — Giftshop by VF');
 L('   Auto-generated from token-colour.json &');
 L('   token-typography.json');
 L('   Do not edit directly.');

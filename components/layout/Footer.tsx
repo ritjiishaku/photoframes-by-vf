@@ -19,7 +19,7 @@ export function Footer() {
                 href="/"
                 className="font-heading text-xl font-semibold text-primary"
               >
-                Photoframes by VF
+                Giftshop by VF
               </Link>
               <p className="mt-3 font-body text-sm text-inverse-on-surface opacity-80 leading-relaxed max-w-xs">
                 Bespoke acrylic frames and non-tarnish gold-layered jewellery,

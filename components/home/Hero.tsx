@@ -23,7 +23,7 @@ export async function Hero() {
       {settings?.about_image && (
         <Image
           src={imageUrl(settings.about_image)}
-          alt="Photoframes by VF — premium custom frames and jewellery"
+          alt="Giftshop by VF — premium custom frames and jewellery"
           fill
           priority
           className="object-cover opacity-15"

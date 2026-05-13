@@ -24,15 +24,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!category) return {};
 
   return {
-    title: `${category.name} | Photoframes by VF`,
+    title: `${category.name} | Giftshop by VF`,
     description:
       category.description?.slice(0, 160) ??
-      `Browse our ${category.name} collection — premium custom frames and personalised gifts by Photoframes by VF.`,
+      `Browse our ${category.name} collection — premium custom frames and personalised gifts by Giftshop by VF.`,
     openGraph: {
-      title: `${category.name} | Photoframes by VF`,
+      title: `${category.name} | Giftshop by VF`,
       description:
         category.description?.slice(0, 160) ??
-        `Explore the ${category.name} collection by Photoframes by VF.`,
+        `Explore the ${category.name} collection by Giftshop by VF.`,
       type: 'website',
       locale: 'en_NG',
     },

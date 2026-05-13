@@ -9,11 +9,11 @@ const messages: Record<InquiryType, string> = {
   product_specific:
     "Hello! I'm interested in {productAndCategory}. Could you share more details, availability, and pricing? Thank you.",
   general:
-    'Hello! I came across Photoframes by VF and would love to know more about your products. Could you help me?',
+    'Hello! I came across Giftshop by VF and would love to know more about your products. Could you help me?',
   custom_order:
-    "Hello! I'd like to place a custom order with Photoframes by VF. Could we discuss the details?",
+    "Hello! I'd like to place a custom order with Giftshop by VF. Could we discuss the details?",
   corporate:
-    "Hello! I'm interested in bulk/corporate orders from Photoframes by VF. Could we discuss options and pricing?",
+    "Hello! I'm interested in bulk/corporate orders from Giftshop by VF. Could we discuss options and pricing?",
 };
 
 function buildMessage(type: InquiryType, context?: WhatsAppContext): string {

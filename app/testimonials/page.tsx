@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
   title: 'Testimonials',
     description:
-      'Real reviews from happy customers — see why Photoframes by VF is Nigeria\'s trusted choice for custom gifts.',
+      'Real reviews from happy customers — see why Giftshop by VF is Nigeria\'s trusted choice for custom gifts.',
     type: 'website',
     locale: 'en_NG',
   },

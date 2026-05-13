@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: product.name,
       description:
         product.description?.slice(0, 160) ??
-        `Premium ${product.category || 'custom frame'} by Photoframes by VF.`,
+        `Premium ${product.category || 'custom frame'} by Giftshop by VF.`,
       type: 'website',
       locale: 'en_NG',
       images: product.image_url

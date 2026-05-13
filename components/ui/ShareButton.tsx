@@ -15,7 +15,7 @@ export function ShareButton({ title, text, url, className = '' }: ShareButtonPro
   const handleShare = useCallback(async () => {
     const shareData = {
       title,
-      text: text || `Check out ${title} on Photoframes by VF`,
+      text: text || `Check out ${title} on Giftshop by VF`,
       url: url || (typeof window !== 'undefined' ? window.location.href : ''),
     };
 

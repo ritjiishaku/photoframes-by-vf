@@ -6,7 +6,7 @@ export const NAV_LINKS = [
 ] as const;
 
 // ── Footer ────────────────────────────────────────
-export const FOOTER_COPYRIGHT = `© ${new Date().getFullYear()} Photoframes by VF. All rights reserved.`;
+export const FOOTER_COPYRIGHT = `© ${new Date().getFullYear()} Giftshop by VF. All rights reserved.`;
 export const FOOTER_COLLECTIONS = [
   { label: 'Acrylic Frames', href: '/categories/acrylic-frames' },
   { label: 'Gold Jewellery', href: '/categories/jewellery' },
@@ -38,7 +38,7 @@ export const INSTAGRAM_HANDLE = 'photoframesbyvf';
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 // ── SEO ────────────────────────────────────────────
-export const SITE_NAME = 'Photoframes by VF';
+export const SITE_NAME = 'Giftshop by VF';
 export const SITE_DESCRIPTION =
   'Bespoke acrylic frames and non-tarnish gold-layered jewellery, meticulously crafted to honor your most significant milestones and preserve the beauty of your story.';
 export const OG_LOCALE = 'en_NG';

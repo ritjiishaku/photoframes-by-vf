@@ -5,11 +5,11 @@ import type { Metadata } from 'next';
 export const revalidate = 900;
 
 export const metadata: Metadata = {
-  title: 'Our Collection | Photoframes by VF',
+  title: 'Our Collection | Giftshop by VF',
   description:
     'Browse our collection of premium custom acrylic frames, gold-layered jewellery, and personalised gifts. Perfect for life\'s most cherished milestones.',
   openGraph: {
-    title: 'Our Collection | Photoframes by VF',
+    title: 'Our Collection | Giftshop by VF',
     description:
       'Explore premium custom frames and gold-layered jewellery crafted with love.',
     type: 'website',

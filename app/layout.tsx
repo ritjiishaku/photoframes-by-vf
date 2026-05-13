@@ -30,8 +30,8 @@ const accent = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Photoframes by VF — Premium Custom Frames & Gold Jewellery',
-    template: '%s | Photoframes by VF',
+    default: 'Giftshop by VF — Premium Custom Frames & Gold Jewellery',
+    template: '%s | Giftshop by VF',
   },
   description:
     'Premium custom acrylic photo frames and non-tarnish gold-layered jewellery in Nigeria. Crafted for love, milestones, and moments worth keeping.',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     icon: '/favicon.svg',
   },
   openGraph: {
-    siteName: 'Photoframes by VF',
+    siteName: 'Giftshop by VF',
     type: 'website',
     locale: 'en_NG',
   },
