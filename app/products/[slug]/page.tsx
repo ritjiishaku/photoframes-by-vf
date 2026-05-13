@@ -1,4 +1,4 @@
-import { getProductBySlug, getProductSlugs, getProductsByCategory } from '@/lib/sheets/queries';
+import { getProductBySlug, getProductsByCategory } from '@/lib/sheets/queries';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { ProductSchema } from '@/components/product/ProductSchema';
 import { ProductViewTracker } from '@/components/product/ProductViewTracker';
@@ -7,15 +7,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 export const revalidate = 900;
-
-export async function generateStaticParams() {
-  try {
-    const slugs = await getProductSlugs();
-    return slugs.map((s) => ({ slug: s.slug }));
-  } catch {
-    return [];
-  }
-}
+export const dynamicParams = true;
 
 interface PageProps {
   params: { slug: string };
