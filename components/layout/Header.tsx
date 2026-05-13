@@ -10,7 +10,7 @@ export function Header() {
           href="/"
           className="font-heading text-lg md:text-xl font-semibold text-primary tracking-tight"
         >
-          Photoframes<span className="text-on-surface"> by VF</span>
+          Giftshop<span className="text-on-surface"> by VF</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
